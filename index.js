@@ -6,6 +6,10 @@ app.use(express.json());
 
 app.listen(process.env.PORT || PORT, () => console.log(`Listening on port ${PORT}`));
 
+app.get("/", (req, res) => {
+    res.status(200).send("Connection established!")
+});
+
 app.get('/tshirt', (req, res) => {
     res.status(200).send({
         tshirt: "A T-shirt",
